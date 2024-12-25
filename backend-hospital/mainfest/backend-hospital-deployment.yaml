@@ -6,12 +6,12 @@ metadata:
   name: backend-hospital-deployment
   namespace: envi-name
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
+      maxSurge: 50%
+      maxUnavailable: 50%
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -32,10 +32,10 @@ spec:
               protocol: TCP
           resources:
             limits:
-              cpu: 200m
-              memory: 500Mi
+              cpu: 1000m
+              memory: 1000Mi
             requests:
-              cpu: 200m
+              cpu: 400m
               memory: 500Mi
           securityContext:
             allowPrivilegeEscalation: true

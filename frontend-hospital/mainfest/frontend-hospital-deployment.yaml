@@ -10,8 +10,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
+      maxSurge: 50%
+      maxUnavailable: 50%
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -32,11 +32,11 @@ spec:
               protocol: TCP
           resources:
             limits:
-              cpu: 200m
-              memory: 500Mi
+              cpu: 500m
+              memory: 800Mi
             requests:
-              cpu: 200m
-              memory: 500Mi
+              cpu: 300m
+              memory: 400Mi
           securityContext:
             allowPrivilegeEscalation: true
             runAsGroup: 0
