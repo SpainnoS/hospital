@@ -6,7 +6,7 @@ metadata:
   name: backend-hospital-deployment
   namespace: envi-name
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
